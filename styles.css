@@ -1,0 +1,218 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'MyCustomFont', Arial, sans-serif; /* Utilisation de la police personnalisée */
+    background: #000;
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Définir la police avec @font-face */
+@font-face {
+    font-family: 'MyCustomFont'; /* Nom que tu veux donner à la police */
+    src: url('fonts/SFProDisplay-Light.woff2') format('woff2'),
+         url('fonts/SFProDisplay-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+header {
+    background: #000; /* Couleur d'arrière-plan noire */
+    padding: 1em 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+header.scrolled {
+    background: rgba(0, 0, 0, 0.8);
+    transition: background 0.3s ease;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+
+nav ul li a {
+    color: #FFDAB9; /* Couleur pêche des liens */
+    text-decoration: none;
+    font-size: 2em; /* Taille de la police */
+    font-weight: 600;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #FFC0CB; /* Couleur pêche claire au survol */
+    transform: scale(1.05);
+}
+
+.section {
+    padding: 4em 2em;
+    margin: 2em 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.text-line {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    display: block; /* Assurer que chaque ligne est en bloc */
+    margin-bottom: 1em; /* Espacement entre les lignes de texte */
+}
+
+.text-line.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animation de texte */
+@keyframes text-fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.text-line.visible {
+    animation: text-fade-in 0.6s ease-out forwards;
+}
+
+h1, h2 {
+    font-weight: 600;
+    margin-bottom: 1em;
+    transition: color 0.3s ease;
+}
+
+h1 {
+    font-size: 5em; /* Taille de la police */
+    color: #FFDAB9; /* Couleur pêche du titre */
+}
+
+h2 {
+    font-size: 4em; /* Taille de la police */
+    color: #FFDAB9; /* Couleur pêche du sous-titre */
+}
+
+p, .project p {
+    font-size: 2.4em; /* Taille de la police */
+    margin-bottom: 1.5em;
+    color: #ccc;
+    transition: color 0.3s ease;
+}
+
+.project {
+    margin-bottom: 2em;
+}
+
+.project h3 {
+    font-size: 3em; /* Taille de la police */
+    color: #FFDAB9; /* Couleur pêche des titres de projets */
+    margin-bottom: 0.5em;
+}
+
+/* Animation de zoom */
+@keyframes zoom-in {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.project.visible {
+    animation: zoom-in 0.6s ease-out forwards;
+}
+
+.button {
+    display: inline-block;
+    padding: 1em 2em; /* Ajusté pour une taille plus raisonnable */
+    background: #FFDAB9; /* Couleur pêche du bouton */
+    color: #000;
+    text-decoration: none;
+    font-size: 1.6em; /* Taille de la police */
+    border-radius: 50px; /* Bordure arrondie */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre pour donner de la profondeur */
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+    background: #FFC0CB; /* Couleur pêche claire du bouton au survol */
+    transform: scale(1.05);
+}
+
+/* Styles pour les compétences */
+.skill {
+    margin-bottom: 2em;
+}
+
+.skill h3 {
+    font-size: 2.4em;
+    color: #FFDAB9;
+    margin-bottom: 0.5em;
+}
+
+.skill-bar {
+    width: 100%;
+    background: #333;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.skill-level {
+    height: 20px;
+    background: #FFDAB9;
+    border-radius: 10px;
+    transition: width 0.6s ease;
+}
+
+#contact ul {
+    list-style: none;
+    padding: 0;
+}
+
+#contact ul li {
+    margin: 1em 0; /* Espacement pour une meilleure lisibilité */
+}
+
+#contact ul li a {
+    color: #FFDAB9; /* Couleur pêche des liens de contact */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#contact ul li a:hover {
+    color: #FFC0CB; /* Couleur pêche claire au survol des liens de contact */
+}
+
+/* Styles pour les logos */
+.logo {
+    max-width: 200px;
+    margin: 20px auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
